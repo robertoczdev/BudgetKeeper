@@ -19,6 +19,6 @@ platform :ios do
   desc "Lane to run the unit tests"
   lane :tests do
     run_tests(device: "iPhone 11",
-            scheme: "DocumentsValidator")
+            scheme: "BudgetKeeper")
   end
 end
