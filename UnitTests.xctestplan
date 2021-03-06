@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "A54CC6A6-AB4B-4701-8DCC-34CA8112A017",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:BudgetKeeper.xcodeproj",
+        "identifier" : "BAEDC8D024389FB20055FAF1",
+        "name" : "BudgetKeeperTests"
+      }
+    }
+  ],
+  "version" : 1
+}

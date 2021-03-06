@@ -1,0 +1,56 @@
+{
+  "configurations" : [
+    {
+      "id" : "2AAF08B6-24D9-4BE5-AB5C-A35930AA1FA6",
+      "name" : "German",
+      "options" : {
+
+      }
+    },
+    {
+      "id" : "5C7B9897-06CE-4C08-AAC9-57635B966D76",
+      "name" : "English",
+      "options" : {
+        "language" : "en",
+        "region" : "US"
+      }
+    },
+    {
+      "id" : "6EB3C30E-5672-4A1B-A642-4A08278E2DED",
+      "name" : "Spanish",
+      "options" : {
+        "language" : "es",
+        "region" : "ES"
+      }
+    },
+    {
+      "id" : "542583FB-4E32-4F84-993F-556E1F69BBBA",
+      "name" : "English UK",
+      "options" : {
+        "language" : "en-GB",
+        "region" : "GB"
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "language" : "de",
+    "region" : "DE"
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:BudgetKeeper.xcodeproj",
+        "identifier" : "BAEDC8DB24389FB20055FAF1",
+        "name" : "BudgetKeeperUITests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:BudgetKeeper.xcodeproj",
+        "identifier" : "BAEDC8D024389FB20055FAF1",
+        "name" : "BudgetKeeperTests"
+      }
+    }
+  ],
+  "version" : 1
+}
