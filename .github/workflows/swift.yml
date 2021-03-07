@@ -1,20 +1,27 @@
+## Se especifica un nombre
 name: Swift
-
+# se acciona el flujo de trabajo 
 on:
-  push:
+#se especifica el cuando de la acción
+   push:
+#seleccionar rama
     branches: [ master, develop ]
-  pull_request:
+   pull_request:
     branches: [ master, develop ]
-
-jobs:    
+# se crean los jobs (Trabajos)
+jobs:
+#se asigna un nombre al job
   test:
     name: Test
+ #   // especificar bajo que sistema operativo github creara el contedor donde probara el codigo
     runs-on: macos-latest
-
+  #  // sintaxis de YAML "- " para ordenar los pasos de la ejecucion
+   # // uses es otro comando el cual permite importar otro guthub actions
     steps:
     - name: Checkout
       uses: actions/checkout@v1
     - name: Bundle Install
+   #   // run para ejecutar comandos
       run: bundle install
     - name: Unit tests
       run: bundle exec fastlane tests
