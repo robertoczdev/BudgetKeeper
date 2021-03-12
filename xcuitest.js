@@ -1,10 +1,11 @@
 const request = require('request')
 
+
 const username = 'RobertoCZ'
 const apiKey = '926af2a9-092a-4832-92a9-7bd3566b688f'
 
 const iOS = { 
-version1: "13.3",
+version1: "13.1",
 version2: '13.3',
 version3: '14.2',
 version4: '14.3',
