@@ -6,15 +6,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@main
-      - name: npm install
-        uses: actions/npm@main
-        with:
-          args: install
-      - name: npm test
-        uses: actions/npm@main
-        with:
-          args: run test
-      - name: npm lint
-        uses: actions/npm@main
-        with:
-          args: run lint
+      - name: xcuitest.js
