@@ -1,9 +1,12 @@
-on: push
-name: npm build, lint, test and publish
+name: Swift2
+on:
+  [ push ]
 jobs:
-  build-and-publish:
-    name: build and publish
-    runs-on: ubuntu-latest
+  build:
+    runs-on: macos-latest
     steps:
-      - uses: actions/checkout@main
-      - name: node xcuitest.js
+    - uses: actions/checkout@v2
+    - name: install
+      run: node install
+    - name: run
+      run: node xcuitest.js
