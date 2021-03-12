@@ -5,16 +5,16 @@ jobs:
     name: build and publish
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@main
       - name: npm install
-        uses: actions/npm@master
+        uses: actions/npm@main
         with:
           args: install
       - name: npm test
-        uses: actions/npm@master
+        uses: actions/npm@main
         with:
           args: run test
       - name: npm lint
-        uses: actions/npm@master
+        uses: actions/npm@main
         with:
           args: run lint
