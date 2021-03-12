@@ -9,7 +9,9 @@ version1: "13.1",
 version2: '13.3',
 version3: '14.2',
 version4: '14.3',
-version5: '14.4'
+version5: '14.4',
+version7: '14.3',
+version8: '14.4'
 };
 
 const devicesName ={

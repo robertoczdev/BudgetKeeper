@@ -7,6 +7,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: install
-      run: node install
+      run: npm install
     - name: run
       run: node xcuitest.js
