@@ -1,11 +1,14 @@
 name: Testing
 
 on:
-  pull_request:
-    types: [opened]
+  [push]
 
 jobs:
   thanks:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
-      - uses: robertoczdev/BudgetKeeper@main
+      - name: install
+      - run: npm install
+      
+      - name: test
+      - run: node xcuitest.js
