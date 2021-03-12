@@ -1,18 +1,20 @@
-name: Testing
-
-on:
-  [push]
-
+on: push
+name: npm build, lint, test and publish
 jobs:
-  thanks:
-    runs-on: macOS-latest
+  build-and-publish:
+    name: build and publish
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      
-      - run: 'BudgetKeeper/kobiton/xcuitest.js'
-
-      - name: install
-      - run: npm install
-      
-      - name: test
-      - run: node xcuitest.js
+      - uses: actions/checkout@master
+      - name: npm install
+        uses: actions/npm@master
+        with:
+          args: install
+      - name: npm test
+        uses: actions/npm@master
+        with:
+          args: run test
+      - name: npm lint
+        uses: actions/npm@master
+        with:
+          args: run lint
