@@ -1,0 +1,11 @@
+name: Testing
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  thanks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: robertoczdev/BudgetKeeper@main
