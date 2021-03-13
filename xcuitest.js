@@ -27,10 +27,10 @@ device6: "iPhone XR"
 const encodeAuth= `Basic ${Buffer.from(`${username}:${apiKey}`).toString('base64')}`
 
 
-const runner = "https://kobiton-us-east.s3.amazonaws.com/test-runner/users/143472/Runner-8a774fc0-8341-11eb-9c8b-1975cdc439a2.ipa?AWSAccessKeyId=AKIAJ7BONOZUJZMWR4WQ&Expires=1615603526&Signature=HdhCgQr9Qy2bojT%2BvMILsZVcBxw%3D"
-const app = "kobiton-store:v186405"
+const runner = "https://kobiton-us-east.s3.amazonaws.com/test-runner/users/121602/Runner-be16e350-8377-11eb-a5c4-fb116d54b6ff.ipa?AWSAccessKeyId=AKIAJ7BONOZUJZMWR4WQ&Expires=1615626809&Signature=aOZv0pzRuIePIr1Af5SMOjX9kl0%3D"
+const app = "kobiton-store:168852"
 //const testPlan = "https://kobiton-us-east.s3.amazonaws.com/test-plan/users/143472/FullTests-881b7d20-828b-11eb-a66c-9d499eded400.xctestplan?AWSAccessKeyId=AKIAJ7BONOZUJZMWR4WQ&Expires=1615525336&Signature=fLP5Et0wpd0dEKMUFWIcBU%2BbhI8%3D"
-const testPlan = ""
+const testPlan = "https://kobiton-us-east.s3.amazonaws.com/test-plan/users/121602/XcodeTestPlan-c26dba50-8377-11eb-bc65-9d2063c7247c.xctestplan?AWSAccessKeyId=AKIAJ7BONOZUJZMWR4WQ&Expires=1615626796&Signature=FRgDRoL1vS30r3yGhBzTpKdpNpc%3D"
 const headers = {
   'Content-Type':'application/json',
   'Authorization': encodeAuth,
@@ -78,20 +78,43 @@ let devices = [
   //tests:              [],
   testPlan:           testPlan
 
+},
+{ 
+  sessionName:        'Automation test session',
+  sessionDescription: 'This is an example for XCUITEST on iphone X testing', 
+  noReset:            true,
+  fullReset:          false,     
+  deviceName:         devicesName.device1,
+  platformVersion:    iOS.version3,   
+  // The given group is used for finding devices and the created session will be visible for all members within the group.
+  groupId:            2249, // Group: abcdc  
+  deviceGroup:        'KOBITON',
+  app:                app,
+  testRunner:         runner, 
+  testFramework:      'XCUITEST',
+  sessionTimeout:     30,
+
+  // The user can specifically test running via testPlan or tests
+  // If the testPlan and tests are set, the test framework will auto-select the testPlan first
+  //tests:              [],
+  testPlan:           testPlan
+
 }
 ]
-
+var configuration  = devices[0];
 for(var i = 0; i <= devices.length; i++){
-  var configuration  = devices[i];
+  if(i > 0){
+    var configuration  = devices[i];
+  }
 var body = {
   configuration
 }
-myFunc(body)
+kobiton(body)
 }
 
 
 
-function myFunc(body){
+function kobiton(body){
   request({
     url: 'https://api.kobiton.com/hub/session',
     json: true,
